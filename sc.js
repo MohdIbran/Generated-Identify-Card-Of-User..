@@ -1,36 +1,28 @@
-let form=document.querySelector("form");
+
 let main=document.querySelector(".main");
-
-
-
-
-
-let input=document.querySelectorAll("input");
-form.addEventListener("submit", function (val) {
-  val.preventDefault();
-
-  let id=document.createElement("div");
-id.classList.add("id");
-let profile=document.createElement("div");
-profile.classList.add("profile");
-let img=document.createElement("img");
-img.setAttribute("src",input[0].value);
-
-let hee=document.createElement("h5");
-hee.textContent=`Name :${input[1].value}`;
-let haa=document.createElement("h4");
-haa.textContent=`Age :${input[2].value}`;
-let paa=document.createElement("p");
-paa.textContent=`Occupation:${input[3].value}`;
-
-
-profile.appendChild(img);
-id.appendChild(profile);
-id.appendChild(hee);
-id.appendChild(haa);
-id.appendChild(paa);
-main.appendChild(id);
-input.forEach(function (par) {
+let form=document.querySelector("form");
+let input=document.querySelectorAll("input")
+form.addEventListener("submit",function(val) {
+   val.preventDefault();
+   let card=document.createElement("div")
+   card.classList.add("card");
+   let profile=document.createElement("div");
+      profile.classList.add("profile");
+      let img=document.createElement("img");
+      img.setAttribute("src",input[0].value);
+      let a=document.createElement("h5");
+      a.textContent = `Name :${input[1].value}`;
+      let b= document.createElement("h5");
+      b.textContent = `Age : ${input[2].value}`;
+      let c=document.createElement("h6");
+      c.textContent = `Occupation :${input[3].value}`;
+      profile.appendChild(img);
+      card.appendChild(profile);
+      card.appendChild(a);
+      card.appendChild(b);
+      card.appendChild(c);
+      main.appendChild(card);
+      input.forEach(function (par) {
   if(par.type != "submit"){
      par.value = "";
 
@@ -43,14 +35,13 @@ input.forEach(function (par) {
 })
 
 
-  
-  
-})
+      
 
 
 
+   })
+   
+   
 
 
-    
-
-  
+   
